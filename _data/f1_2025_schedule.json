@@ -1,0 +1,364 @@
+{
+  "races": [
+    {
+      "name": "Australian Grand Prix",
+      "circuitId": "albert_park",
+      "location": "Melbourne",
+      "latitude": -37.8373,
+      "longitude": 144.9666,
+      "round": 1,
+      "sessions": {
+        "fp1": "2025-03-14T01:30:00Z",
+        "fp2": "2025-03-14T05:00:00Z",
+        "fp3": "2025-03-15T01:30:00Z",
+        "qualifying": "2025-03-15T05:00:00Z",
+        "race": "2025-03-16T04:00:00Z"
+      }
+    },
+    {
+      "name": "Chinese Grand Prix",
+      "circuitId": "shanghai",
+      "location": "Shanghai",
+      "latitude": 31.3807,
+      "longitude": 121.2498,
+      "round": 2,
+      "sessions": {
+        "fp1": "2025-03-21T03:30:00Z",
+        "sprintQualifying": "2025-03-21T07:30:00Z",
+        "sprint": "2025-03-22T03:00:00Z",
+        "qualifying": "2025-03-22T07:00:00Z",
+        "race": "2025-03-23T07:00:00Z"
+      }
+    },
+    {
+      "name": "Japanese Grand Prix",
+      "location": "Suzuka",
+      "circuitId": "suzuka",
+      "latitude": 35.3689,
+      "longitude": 138.9256,
+      "round": 3,
+      "sessions": {
+        "fp1": "2025-04-04T02:30:00Z",
+        "fp2": "2025-04-04T06:00:00Z",
+        "fp3": "2025-04-05T02:30:00Z",
+        "qualifying": "2025-04-05T06:00:00Z",
+        "race": "2025-04-06T05:00:00Z"
+      }
+    },
+    {
+      "name": "Bahrain Grand Prix",
+      "location": "Sakhir",
+      "circuitId": "bahrain",
+      "latitude": 26.037,
+      "longitude": 50.5112,
+      "round": 1,
+      "sessions": {
+        "fp1": "2025-04-11T11:30:00Z",
+        "fp2": "2025-04-11T15:00:00Z",
+        "fp3": "2025-04-12T12:30:00Z",
+        "qualifying": "2025-04-12T16:00:00Z",
+        "race": "2025-04-13T15:00:00Z"
+      }
+    },
+    {
+      "name": "Saudi Arabian Grand Prix",
+      "location": "Jeddah",
+      "circuitId": "jeddah",
+      "latitude": 21.485811,
+      "longitude": 39.192505,
+      "round": 2,
+      "sessions": {
+        "fp1": "2025-04-18T13:30:00Z",
+        "fp2": "2025-04-18T17:00:00Z",
+        "fp3": "2025-04-19T13:30:00Z",
+        "qualifying": "2025-04-19T17:00:00Z",
+        "race": "2025-04-20T17:00:00Z"
+      }
+    },
+    {
+      "name": "Miami Grand Prix",
+      "location": "Miami",
+      "circuitId": "miami",
+      "latitude": 25.957764,
+      "longitude": -80.238835,
+      "round": 6,
+      "sessions": {
+        "fp1": "2025-05-02T16:30:00Z",
+        "sprintQualifying": "2025-05-02T20:30:00Z",
+        "sprint": "2025-05-03T16:00:00Z",
+        "qualifying": "2025-05-03T20:00:00Z",
+        "race": "2025-05-04T20:00:00Z"
+      }
+    },
+    {
+      "name": "Emilia Romagna Grand Prix",
+      "location": "Imola",
+      "circuitId": "imola",
+      "latitude": 44.344576,
+      "longitude": 11.713808,
+      "round": 4,
+      "sessions": {
+        "fp1": "2025-05-16T11:30:00Z",
+        "fp2": "2025-05-16T15:00:00Z",
+        "fp3": "2025-05-17T10:30:00Z",
+        "qualifying": "2025-05-17T14:00:00Z",
+        "race": "2025-05-18T13:00:00Z"
+      }
+    },
+    {
+      "name": "Monaco Grand Prix",
+      "location": "Monte Carlo",
+      "circuitId": "monaco",
+      "latitude": 43.7338,
+      "longitude": 7.4215,
+      "round": 8,
+      "sessions": {
+        "fp1": "2025-05-23T11:30:00Z",
+        "fp2": "2025-05-23T15:00:00Z",
+        "fp3": "2025-05-24T10:30:00Z",
+        "qualifying": "2025-05-24T14:00:00Z",
+        "race": "2025-05-25T13:00:00Z"
+      }
+    },
+    {
+      "name": "Spanish Grand Prix",
+      "location": "Catalunya",
+      "circuitId": "catalunya",
+      "latitude": 41.5638,
+      "longitude": 2.2585,
+      "round": 9,
+      "sessions": {
+        "fp1": "2025-05-30T11:30:00Z",
+        "fp2": "2025-05-30T15:00:00Z",
+        "fp3": "2025-05-31T10:30:00Z",
+        "qualifying": "2025-05-31T14:00:00Z",
+        "race": "2025-06-01T13:00:00Z"
+      }
+    },
+    {
+      "name": "Canadian Grand Prix",
+      "location": "Montreal",
+      "circuitId": "villeneuve",
+      "latitude": 45.5034,
+      "longitude": -73.5267,
+      "round": 10,
+      "sessions": {
+        "fp1": "2025-06-13T17:30:00Z",
+        "fp2": "2025-06-13T21:00:00Z",
+        "fp3": "2025-06-14T16:30:00Z",
+        "qualifying": "2025-06-14T20:00:00Z",
+        "race": "2025-06-15T18:00:00Z"
+      }
+    },
+    {
+      "name": "Austrian Grand Prix",
+      "location": "Spielberg",
+      "circuitId": "red_bull_ring",
+      "latitude": 47.2225,
+      "longitude": 14.7607,
+      "round": 11,
+      "sessions": {
+        "fp1": "2025-06-27T11:30:00Z",
+        "fp2": "2025-06-27T15:00:00Z",
+        "fp3": "2025-06-28T10:30:00Z",
+        "qualifying": "2025-06-28T14:00:00Z",
+        "race": "2025-06-29T13:00:00Z"
+      }
+    },
+    {
+      "name": "British Grand Prix",
+      "location": "Silverstone",
+      "circuitId": "silverstone",
+      "latitude": 52.0706,
+      "longitude": -1.0174,
+      "round": 12,
+      "sessions": {
+        "fp1": "2025-07-04T11:30:00Z",
+        "fp2": "2025-07-04T15:00:00Z",
+        "fp3": "2025-07-05T10:30:00Z",
+        "qualifying": "2025-07-05T14:00:00Z",
+        "race": "2025-07-06T14:00:00Z"
+      }
+    },
+    {
+      "name": "Belgian Grand Prix",
+      "location": "Spa-Francorchamps",
+      "circuitId": "spa",
+      "latitude": 50.444,
+      "longitude": 5.9687,
+      "round": 14,
+      "sessions": {
+        "fp1": "2025-07-25T10:30:00Z",
+        "sprintQualifying": "2025-07-25T14:30:00Z",
+        "sprint": "2025-07-26T10:00:00Z",
+        "qualifying": "2025-07-26T14:00:00Z",
+        "race": "2025-07-27T13:00:00Z"
+      }
+    },
+    {
+      "name": "Hungarian Grand Prix",
+      "location": "Budapest",
+      "circuitId": "hungaroring",
+      "latitude": 47.583,
+      "longitude": 19.2526,
+      "round": 13,
+      "sessions": {
+        "fp1": "2025-08-01T11:30:00Z",
+        "fp2": "2025-08-01T15:00:00Z",
+        "fp3": "2025-08-02T10:30:00Z",
+        "qualifying": "2025-08-02T14:00:00Z",
+        "race": "2025-08-03T13:00:00Z"
+      }
+    },
+    {
+      "name": "Dutch Grand Prix",
+      "location": "Zandvoort",
+      "circuitId": "zandvoort",
+      "latitude": 52.388408,
+      "longitude": 4.547122,
+      "round": 15,
+      "sessions": {
+        "fp1": "2025-08-29T10:30:00Z",
+        "fp2": "2025-08-29T14:00:00Z",
+        "fp3": "2025-08-30T09:30:00Z",
+        "qualifying": "2025-08-30T13:00:00Z",
+        "race": "2025-08-31T13:00:00Z"
+      }
+    },
+    {
+      "name": "Italian Grand Prix",
+      "location": "Monza",
+      "circuitId": "monza",
+      "latitude": 45.6169,
+      "longitude": 9.2825,
+      "round": 16,
+      "sessions": {
+        "fp1": "2025-09-05T11:30:00Z",
+        "fp2": "2025-09-05T15:00:00Z",
+        "fp3": "2025-09-06T10:30:00Z",
+        "qualifying": "2025-09-06T14:00:00Z",
+        "race": "2025-09-07T13:00:00Z"
+      }
+    },
+    {
+      "name": "Azerbaijan Grand Prix",
+      "location": "Baku",
+      "circuitId": "baku",
+      "latitude": 40.3699,
+      "longitude": 49.8433,
+      "round": 5,
+      "sessions": {
+        "fp1": "2025-09-19T08:30:00Z",
+        "fp2": "2025-09-19T12:00:00Z",
+        "fp3": "2025-09-20T08:30:00Z",
+        "qualifying": "2025-09-20T12:00:00Z",
+        "race": "2025-09-21T11:00:00Z"
+      }
+    },
+    {
+      "name": "Singapore Grand Prix",
+      "location": "Singapore",
+      "circuitId": "marina_bay",
+      "latitude": 1.2857,
+      "longitude": 103.8575,
+      "round": 17,
+      "sessions": {
+        "fp1": "2025-10-03T09:30:00Z",
+        "fp2": "2025-10-03T13:00:00Z",
+        "fp3": "2025-10-04T09:30:00Z",
+        "qualifying": "2025-10-04T13:00:00Z",
+        "race": "2025-10-05T12:00:00Z"
+      }
+    },
+    {
+      "name": "United States Grand Prix",
+      "location": "Austin",
+      "circuitId": "americas",
+      "latitude": 30.1328,
+      "longitude": -97.6411,
+      "round": 20,
+      "sessions": {
+        "fp1": "2025-10-17T17:30:00Z",
+        "sprintQualifying": "2025-10-17T21:30:00Z",
+        "sprint": "2025-10-18T17:00:00Z",
+        "qualifying": "2025-10-18T21:00:00Z",
+        "race": "2025-10-19T19:00:00Z"
+      }
+    },
+    {
+      "name": "Mexican Grand Prix",
+      "location": "Mexico City",
+      "circuitId": "rodriguez",
+      "latitude": 19.4028,
+      "longitude": -99.0986,
+      "round": 21,
+      "sessions": {
+        "fp1": "2025-10-24T18:30:00Z",
+        "fp2": "2025-10-24T22:00:00Z",
+        "fp3": "2025-10-25T17:30:00Z",
+        "qualifying": "2025-10-25T21:00:00Z",
+        "race": "2025-10-26T20:00:00Z"
+      }
+    },
+    {
+      "name": "Brazilian Grand Prix",
+      "location": "Sao Paulo",
+      "circuitId": "interlagos",
+      "latitude": -23.7014,
+      "longitude": -46.6969,
+      "round": 22,
+      "sessions": {
+        "fp1": "2025-11-07T14:30:00Z",
+        "sprintQualifying": "2025-11-07T18:30:00Z",
+        "sprint": "2025-11-08T14:00:00Z",
+        "qualifying": "2025-11-08T18:00:00Z",
+        "race": "2025-11-09T17:00:00Z"
+      }
+    },
+    {
+      "name": "Las Vegas Grand Prix",
+      "location": "Las Vegas",
+      "circuitId": "vegas",
+      "latitude": 36.166747,
+      "longitude": -115.148708,
+      "round": 23,
+      "sessions": {
+        "fp1": "2025-11-21T00:30:00Z",
+        "fp2": "2025-11-21T04:00:00Z",
+        "fp3": "2025-11-22T00:30:00Z",
+        "qualifying": "2025-11-22T04:00:00Z",
+        "race": "2025-11-23T04:00:00Z"
+      }
+    },
+    {
+      "name": "Qatar Grand Prix",
+      "location": "Doha",
+      "circuitId": "losail",
+      "latitude": 25.490292,
+      "longitude": 51.45303,
+      "round": 19,
+      "sessions": {
+        "fp1": "2025-11-28T13:30:00Z",
+        "sprintQualifying": "2025-11-28T17:30:00Z",
+        "sprint": "2025-11-29T14:00:00Z",
+        "qualifying": "2025-11-29T18:00:00Z",
+        "race": "2025-11-30T16:00:00Z"
+      }
+    },
+    {
+      "name": "Abu Dhabi Grand Prix",
+      "location": "Yas Marina",
+      "circuitId": "yas_marina",
+      "latitude": 24.4821,
+      "longitude": 54.3482,
+      "round": 24,
+      "sessions": {
+        "fp1": "2025-12-05T09:30:00Z",
+        "fp2": "2025-12-05T13:00:00Z",
+        "fp3": "2025-12-06T10:30:00Z",
+        "qualifying": "2025-12-06T14:00:00Z",
+        "race": "2025-12-07T13:00:00Z"
+      }
+    }
+  ]
+}
