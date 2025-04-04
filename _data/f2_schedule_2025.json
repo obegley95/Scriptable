@@ -1,7 +1,7 @@
 {
   "races": [
     {
-      "name": "Australia",
+      "name": "FIA FORMULA 2: The Championship Australia 2025",
       "location": "Melbourne",
       "latitude": -37.8373,
       "longitude": 144.9666,
@@ -14,7 +14,7 @@
       }
     },
     {
-      "name": "Bahrain",
+      "name": "FIA FORMULA 2: The Championship Bahrain 2025",
       "location": "Sakhir",
       "latitude": 26.037,
       "longitude": 50.5112,
@@ -27,7 +27,7 @@
       }
     },
     {
-      "name": "Saudi Arabia",
+      "name": "FIA FORMULA 2: The Championship Saudi Arabia 2025",
       "location": "Jeddah",
       "latitude": 21.485811,
       "longitude": 39.192505,
@@ -40,7 +40,7 @@
       }
     },
     {
-      "name": "Emilia Romagna",
+      "name": "FIA FORMULA 2: The Championship Emilia Romagna 2025",
       "location": "Imola",
       "latitude": 44.344576,
       "longitude": 11.713808,
@@ -53,7 +53,7 @@
       }
     },
     {
-      "name": "Monaco",
+      "name": "FIA FORMULA 2: The Championship Monaco 2025",
       "location": "Monte Carlo",
       "latitude": 43.7338,
       "longitude": 7.4215,
@@ -66,8 +66,8 @@
       }
     },
     {
-      "name": "Spain",
-      "location": "Barcelona",
+      "name": "FIA FORMULA 2: The Championship Spain 2025",
+      "location": "Catalunya",
       "latitude": 41.5638,
       "longitude": 2.2585,
       "round": 6,
@@ -79,7 +79,7 @@
       }
     },
     {
-      "name": "Austria",
+      "name": "FIA FORMULA 2: The Championship Austria 2025",
       "location": "Spielberg",
       "latitude": 47.2225,
       "longitude": 14.7607,
@@ -92,7 +92,7 @@
       }
     },
     {
-      "name": "Britian",
+      "name": "FIA FORMULA 2: The Championship Britain 2025",
       "location": "Silverstone",
       "latitude": 52.0706,
       "longitude": -1.0174,
@@ -105,7 +105,7 @@
       }
     },
     {
-      "name": "Belgium",
+      "name": "FIA FORMULA 2: The Championship Belgium 2025",
       "location": "Spa-Francorchamps",
       "latitude": 50.444,
       "longitude": 5.9687,
@@ -118,7 +118,7 @@
       }
     },
     {
-      "name": "Hungary",
+      "name": "FIA FORMULA 2: The Championship Hungary 2025",
       "location": "Budapest",
       "latitude": 47.583,
       "longitude": 19.2526,
@@ -131,7 +131,7 @@
       }
     },
     {
-      "name": "Italy",
+      "name": "FIA FORMULA 2: The Championship Italy 2025",
       "location": "Monza",
       "latitude": 45.6169,
       "longitude": 9.2825,
@@ -144,7 +144,7 @@
       }
     },
     {
-      "name": "Azerbaijan",
+      "name": "FIA FORMULA 2: The Championship Azerbaijan 2025",
       "location": "Baku",
       "latitude": 40.3699,
       "longitude": 49.8433,
@@ -157,7 +157,7 @@
       }
     },
     {
-      "name": "Qatar",
+      "name": "FIA FORMULA 2: The Championship Qatar 2025",
       "location": "Doha",
       "latitude": 25.490292,
       "longitude": 51.45303,
@@ -170,7 +170,7 @@
       }
     },
     {
-      "name": "Abu Dhabi",
+      "name": "FIA FORMULA 2: The Championship Abu Dhabi 2025",
       "location": "Yas Marina",
       "latitude": 24.4821,
       "longitude": 54.3482,
