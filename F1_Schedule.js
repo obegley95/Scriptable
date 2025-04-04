@@ -1,11 +1,9 @@
 // Variables used by Scriptable.
-// These must be at the very top of your script, do not edit or remove them
 // icon-color: red; icon-glyph: calendar;
-const DATA_URL = "https://raw.githubusercontent.com/obegley95/Scriptable/refs/heads/main/_data/f1_2025_schedule.json";
+const DATA_URL = "https://raw.githubusercontent.com/obegley95/Scriptable/refs/heads/main/_data/f1_schedule_2025.json";
 const fm = FileManager.iCloud();
 const now = new Date();
 
-// Circuit data mappings
 const circuitData = {
     base_url: "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/",
     circuits: {
@@ -36,7 +34,6 @@ const circuitData = {
     }
 };
 
-// Short session names
 const sessionLabels = {
     fp1: "FP1",
     fp2: "FP2",
@@ -47,7 +44,6 @@ const sessionLabels = {
     race: "Race",
 };
 
-// Fetch race data
 async function getRaceData() {
     try {
         const req = new Request(DATA_URL);
@@ -59,7 +55,6 @@ async function getRaceData() {
     }
 }
 
-// Find next race
 async function getCurrentRaceIndex(races) {
     let closestRaceIdx = 0;
     let minTimeDiff = Infinity;
@@ -67,7 +62,6 @@ async function getCurrentRaceIndex(races) {
     races.forEach((race, index) => {
         const raceDateTime = new Date(race.sessions.race);
         const timeDiff = raceDateTime - now;
-
         if (timeDiff > 0 && timeDiff < minTimeDiff) {
             minTimeDiff = timeDiff;
             closestRaceIdx = index;
@@ -77,27 +71,16 @@ async function getCurrentRaceIndex(races) {
     return closestRaceIdx;
 }
 
-// Format date/time
 function formatDateTime(timestamp) {
     const date = new Date(timestamp);
     return {
         raw: date,
-        day: date.toLocaleDateString("en-GB", {
-            weekday: "short"
-        }),
-        date: date.toLocaleDateString("en-GB", {
-            month: "numeric",
-            day: "numeric"
-        }),
-        time: date.toLocaleTimeString("en-GB", {
-            hour12: false,
-            hour: "numeric",
-            minute: "numeric"
-        }),
+        day: date.toLocaleDateString("en-GB", { weekday: "short" }),
+        date: date.toLocaleDateString("en-GB", { month: "numeric", day: "numeric" }),
+        time: date.toLocaleTimeString("en-GB", { hour12: false, hour: "numeric", minute: "numeric" }),
     };
 }
 
-// Build widget
 async function createWidget() {
     const races = await getRaceData();
     if (!races) return null;
@@ -122,13 +105,22 @@ async function createWidget() {
     mainVerticalStack.layoutVertically();
     mainVerticalStack.setPadding(27, 0, 0, 10);
 
-    const headerStack = mainVerticalStack.addStack();
-    headerStack.addSpacer();
-    const header = headerStack.addText(`${race.name.toUpperCase()} ${circuit.flag}`);
-    header.font = new Font("Menlo-Bold", 20);
-    header.textColor = new Color("#eaeae1");
-    header.centerAlignText();
-    headerStack.addSpacer();
+    // Only show Grand Prix name with flag
+    const titleContainer = mainVerticalStack.addStack();
+    titleContainer.layoutHorizontally();
+    titleContainer.addSpacer();
+
+    const headerStack = titleContainer.addStack();
+    headerStack.layoutVertically();
+    headerStack.centerAlignContent();
+
+    const titleOnly = `${race.name.split(":")[1].trim()} ${circuit.flag}`;
+    const titleText = headerStack.addText(titleOnly);
+    titleText.font = new Font("Menlo-Bold", 15);
+    titleText.textColor = new Color("#eaeae1");
+    titleText.centerAlignText();
+
+    titleContainer.addSpacer();
 
     const mainStack = mainVerticalStack.addStack();
     mainStack.layoutHorizontally();
@@ -138,15 +130,15 @@ async function createWidget() {
         const img = await imgReq.loadImage();
         const imgStack = mainStack.addStack();
         imgStack.layoutVertically();
-        imgStack.size = new Size(145, 145);
+        imgStack.size = new Size(160, 160);
         const imgElement = imgStack.addImage(img);
-        imgElement.imageSize = new Size(145, 145);
+        imgElement.imageSize = new Size(160, 160);
         imgElement.cornerRadius = 5;
         imgElement.centerAlignImage();
         imgStack.addSpacer();
     }
 
-    mainStack.addSpacer(30);
+    mainStack.addSpacer(10);
 
     const infoStack = mainStack.addStack();
     infoStack.layoutVertically();
@@ -168,20 +160,19 @@ async function createWidget() {
         date.textColor = new Color("#eaeae1");
         date.textOpacity = s.raw < now ? 0.5 : 1;
 
-        row.addSpacer(10); // Spacer between date and time
+        row.addSpacer(10);
 
         const time = row.addText(s.time);
         time.font = new Font("Menlo-Bold", 12);
         time.textColor = new Color("#eaeae1");
         time.textOpacity = s.raw < now ? 0.5 : 1;
 
-        infoStack.addSpacer(5); // Add small space after each row
+        infoStack.addSpacer(5);
     });
 
     return w;
 }
 
-// Run script
 (async () => {
     let resultWidget = await createWidget();
     if (config.runsInWidget) {
