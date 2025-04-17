@@ -28,28 +28,41 @@ async function getRaceData() {
   try {
     const req = new Request(DATA_URL);
     const data = await req.loadJSON();
-    return data.races || [];
+    if (!data?.races) {
+      console.error("Race data is empty or malformed.");
+      return [];
+    }
+    return data.races;
   } catch (e) {
-    console.error("Failed to load race data", e);
+    console.error("Failed to load race data. Please check the URL or your network connection.", e);
     return [];
   }
 }
 
 async function getUpcomingRace(races) {
-  const now = Date.now();
-  let nextRace = null;
-  let soonestTime = Infinity;
+  try {
+    const now = Date.now();
+    let nextRace = null;
+    let soonestTime = Infinity;
 
-  for (const race of races) {
-    const raceTime = new Date(race.sessions?.race).getTime();
-    const timeDiff = raceTime - now;
-    if (timeDiff > 0 && timeDiff < soonestTime) {
-      soonestTime = timeDiff;
-      nextRace = race;
+    for (const race of races) {
+      const raceTime = new Date(race.sessions?.race).getTime();
+      const timeDiff = raceTime - now;
+      if (timeDiff > 0 && timeDiff < soonestTime) {
+        soonestTime = timeDiff;
+        nextRace = race;
+      }
     }
-  }
 
-  return nextRace;
+    if (!nextRace) {
+      console.warn("No upcoming race found.");
+    }
+
+    return nextRace;
+  } catch (e) {
+    console.error("Error while determining the next race.", e);
+    return null;
+  }
 }
 
 function formatDateTime(ts) {
@@ -64,48 +77,59 @@ function formatDateTime(ts) {
 }
 
 function groupSessionsByDay(sessions) {
-  const grouped = {};
-  for (const [key, val] of Object.entries(sessions)) {
-    const label = sessionLabels[key] || key;
-    const dt = formatDateTime(val);
-    if (!grouped[dt.day]) grouped[dt.day] = [];
-    grouped[dt.day].push({ title: label, ...dt });
+  try {
+    const grouped = {};
+    for (const [key, val] of Object.entries(sessions)) {
+      const label = sessionLabels[key] || key;
+      const dt = formatDateTime(val);
+      if (!grouped[dt.day]) grouped[dt.day] = [];
+      grouped[dt.day].push({ title: label, ...dt });
+    }
+    return grouped;
+  } catch (e) {
+    console.error("Error while grouping sessions by day.", e);
+    return {};
   }
-  return grouped;
 }
 
 function sortSessions(sessionsByDay) {
-  for (const day in sessionsByDay) {
-    sessionsByDay[day].sort((a, b) => a.raw - b.raw);
+  try {
+    for (const day in sessionsByDay) {
+      sessionsByDay[day].sort((a, b) => a.raw - b.raw);
+    }
+    return sessionsByDay;
+  } catch (e) {
+    console.error("Error while sorting sessions.", e);
+    return {};
   }
-  return sessionsByDay;
 }
 
 async function fetchAndResizeImage(url, size) {
-  const req = new Request(url);
-  const img = await req.loadImage();
-  const ctx = new DrawContext();
-  ctx.size = size;
-  ctx.opaque = false;
-  ctx.respectScreenScale = true;
-  ctx.drawImageInRect(img, new Rect(0, 0, size.width, size.height));
-  return ctx.getImage();
+  try {
+    const req = new Request(url);
+    const img = await req.loadImage();
+    const ctx = new DrawContext();
+    ctx.size = size;
+    ctx.opaque = false;
+    ctx.respectScreenScale = true;
+    ctx.drawImageInRect(img, new Rect(0, 0, size.width, size.height));
+    return ctx.getImage();
+  } catch (e) {
+    console.error(`Failed to fetch or resize image from URL: ${url}`, e);
+    return null;
+  }
 }
 
 async function createWidget() {
   const now = new Date();
   const races = await getRaceData();
   if (races.length === 0) {
-    const w = new ListWidget();
-    w.addText("No race data available").textColor = Color.red();
-    return w;
+    return createErrorWidget("No race data available.");
   }
 
   const race = await getUpcomingRace(races);
   if (!race?.sessions) {
-    const w = new ListWidget();
-    w.addText("No upcoming race sessions found").textColor = Color.red();
-    return w;
+    return createErrorWidget("No upcoming race sessions found.");
   }
 
   let sessionsByDay = groupSessionsByDay(race.sessions);
@@ -164,9 +188,11 @@ async function createWidget() {
     try {
       const flagUrl = `https://raw.githubusercontent.com/obegley95/Scriptable/refs/heads/main/_data/flags/${flagCode}.png`;
       const flagImage = await fetchAndResizeImage(flagUrl, new Size(14, 10));
-      const img = left.addImage(flagImage);
-      img.imageSize = new Size(14, 10);
-      img.cornerRadius = 2;
+      if (flagImage) {
+        const img = left.addImage(flagImage);
+        img.imageSize = new Size(14, 10);
+        img.cornerRadius = 2;
+      }
     } catch (e) {
       console.warn(`Flag not found for code: ${flagCode}`);
     }
@@ -240,6 +266,16 @@ async function createWidget() {
     right.addSpacer(1);
   }
 
+  return widget;
+}
+
+// Helper function to create an error widget
+function createErrorWidget(message) {
+  const widget = new ListWidget();
+  const text = widget.addText(message);
+  text.textColor = Color.red();
+  text.font = Font.boldSystemFont(14);
+  text.centerAlignText();
   return widget;
 }
 
